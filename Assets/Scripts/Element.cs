@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class Element : MonoBehaviour {
+    public Animator Animator;
     public GameManager GameManager;
     public Vector3 offset = Vector3.zero;
     public GameObject LayoutPrefab;
@@ -12,6 +13,7 @@ public class Element : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         _layout = Instantiate(LayoutPrefab, FindObjectOfType<Canvas>().transform);
+        _layout.transform.SetAsFirstSibling();
     }
 
     // Update is called once per frame
@@ -36,6 +38,18 @@ public class Element : MonoBehaviour {
             } else {
                 Destroy(t.gameObject);
             }
+        }
+    }
+
+    public void PlaySelectAnim() {
+        if (Animator != null) {
+            Animator.SetTrigger("Select");
+        }
+    }
+
+    public void PlayValidateAnim() {
+        if (Animator != null) {
+            Animator.SetTrigger("Validate");
         }
     }
 }

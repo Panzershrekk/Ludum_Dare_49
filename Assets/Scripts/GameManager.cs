@@ -14,28 +14,32 @@ public class GameManager : MonoBehaviour {
     public float UnstabilityGrowPerSec = 0.01f;
     public float UnstabilityDecreaseWhenSuccess = -0.1f;
     public float TimeBetweenCombination = 3f;
+    public int BaseNumberOnCombination = 3;
     public float BaseDifficultyRatio = 1;
     public float SecondForDifficultyToIncrease = 15f;
     public float DifficultyIncrease = 0.1f;
+    public float ComboMultiplier = 1.5f;
     public float _difficultyRatio = 1;
     private float _difficultyRatioToAdd = 0;
     private float _timeBeforeNextCombination;
     private bool _combinationPending = false;
     private float _elaspedTime = 0;
     private float _nextDifficultyIncreaseTime = 0f;
+
     void Start() {
-        StartGame();
+        GameUIManager.UpdateTimerText(0);
     }
 
     // Update is called once per frame
     void Update() {
         if (GameStarted == true && GameFinished == false) {
             _elaspedTime += Time.deltaTime;
+            GameUIManager.UpdateTimerText(_elaspedTime);
             ChangeUnstability(UnstabilityGrowPerSec * _difficultyRatio * Time.deltaTime);
             if (_timeBeforeNextCombination > 0) {
                 _timeBeforeNextCombination -= Time.deltaTime;
             } else if (_combinationPending == false) {
-                Combination.GenerateCombination(3);
+                Combination.GenerateCombination(BaseNumberOnCombination);
                 _combinationPending = true;
             }
             if (_nextDifficultyIncreaseTime > 0) {
@@ -49,19 +53,24 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void CombinationSuccess() {
-        ChangeUnstability(UnstabilityDecreaseWhenSuccess * _difficultyRatio);
+    public void CombinationSuccess(bool combo) {
+        if (combo) {
+            ChangeUnstability(UnstabilityDecreaseWhenSuccess * (1 + _difficultyRatio / 10));
+        } else {
+            ChangeUnstability(UnstabilityDecreaseWhenSuccess * (1 + _difficultyRatio / 10) * ComboMultiplier);
+        }
         _combinationPending = false;
-        _timeBeforeNextCombination = TimeBetweenCombination / _difficultyRatio;
+        _timeBeforeNextCombination = TimeBetweenCombination / (1 + _difficultyRatio);
     }
 
-    void StartGame() {
+    public void StartGame() {
         _nextDifficultyIncreaseTime = SecondForDifficultyToIncrease;
         GameStarted = true;
     }
 
     void FinishGame() {
         GameFinished = true;
+        GameUIManager.DisplayFinish();
     }
 
     //Value must be between 0.0f and 1.0f
