@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
     public float BaseDifficultyRatio = 1;
     public float SecondForDifficultyToIncrease = 15f;
     public float DifficultyIncrease = 0.1f;
-    private float _difficultyRatio = 1;
+    public float _difficultyRatio = 1;
     private float _difficultyRatioToAdd = 0;
     private float _timeBeforeNextCombination;
     private bool _combinationPending = false;
