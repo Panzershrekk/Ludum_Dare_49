@@ -15,6 +15,7 @@ public class SceneLoader : MonoBehaviour {
 
     IEnumerator LoadLevel(int levelIndex) {
         transition.SetTrigger("Out");
+        AudioManager.Instance.Play("Menu_click");
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(levelIndex);
     }

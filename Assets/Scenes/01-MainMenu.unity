@@ -336,7 +336,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ffbc7ef1b4ea64081d386d3a34829c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sounds: []
+  Sounds:
+  - Name: Menu_click
+    Clip: {fileID: 8300000, guid: ffa1be0d87df38d4ebe1014b67c8af61, type: 3}
+    Volume: 0.5
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
 --- !u!4 &639397985
 Transform:
   m_ObjectHideFlags: 0
@@ -746,6 +752,10 @@ PrefabInstance:
       propertyPath: transition
       value: 
       objectReference: {fileID: 1781536378}
+    - target: {fileID: 3214812634699835866, guid: b8f51b7413fb47b489f569baeb8cc8fb, type: 3}
+      propertyPath: transitionTime
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3214812634699835867, guid: b8f51b7413fb47b489f569baeb8cc8fb, type: 3}
       propertyPath: m_Name
       value: LevelLoader
