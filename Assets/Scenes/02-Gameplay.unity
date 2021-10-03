@@ -600,21 +600,21 @@ MonoBehaviour:
   Sounds:
   - Name: Small_Validate
     Clip: {fileID: 8300000, guid: bd7402af336ad124bab01dc0566f5f93, type: 3}
-    Volume: 0.5
+    Volume: 0.2
     Pitch: 1
     Loop: 0
     PlayOnStart: 0
     Source: {fileID: 0}
   - Name: Big_Validate
     Clip: {fileID: 8300000, guid: f12ef4589962bda40abf6468a6ab14b6, type: 3}
-    Volume: 0.5
+    Volume: 0.2
     Pitch: 1
     Loop: 0
     PlayOnStart: 0
     Source: {fileID: 0}
   - Name: Countdown
     Clip: {fileID: 8300000, guid: 5fa588688fe202e44881b4dda8c4f7ec, type: 3}
-    Volume: 0.5
+    Volume: 0.4
     Pitch: 1
     Loop: 0
     PlayOnStart: 0
@@ -2310,7 +2310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2885,7 +2885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
