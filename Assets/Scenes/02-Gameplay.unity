@@ -1664,7 +1664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600479966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.96, y: -1.78, z: -0.09}
+  m_LocalPosition: {x: 5.87, y: -1.45, z: -0.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1703,7 +1703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animator: {fileID: 600479969}
   GameManager: {fileID: 1916971509}
-  offset: {x: -1, y: 1, z: 0}
+  offset: {x: -0.3, y: 1, z: 0}
   LayoutPrefab: {fileID: 6890579074792369362, guid: 6570fb18e33a1544ea94ea7889143fb6, type: 3}
   ImageInputPrefab: {fileID: 9184905306064012205, guid: 4ffa3738d9795e54baa66ee236de1a37, type: 3}
 --- !u!1 &658546794
@@ -5269,7 +5269,7 @@ MonoBehaviour:
   GameUIManager: {fileID: 858410993}
   Combination: {fileID: 2131288408}
   Unstability: 0
-  UnstabilityGrowPerSec: 0.012
+  UnstabilityGrowPerSec: 0.024
   UnstabilityDecreaseWhenSuccess: -0.12
   TimeBetweenCombination: 3
   BaseNumberOnCombination: 3
@@ -5573,7 +5573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animator: {fileID: 2043777491}
   GameManager: {fileID: 1916971509}
-  offset: {x: -0.1, y: 1, z: 0}
+  offset: {x: -0.3, y: 1, z: 0}
   LayoutPrefab: {fileID: 6890579074792369362, guid: 6570fb18e33a1544ea94ea7889143fb6, type: 3}
   ImageInputPrefab: {fileID: 9184905306064012205, guid: 4ffa3738d9795e54baa66ee236de1a37, type: 3}
 --- !u!1 &2073009214
