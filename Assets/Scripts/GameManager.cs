@@ -102,7 +102,6 @@ public class GameManager : MonoBehaviour {
         if (Unstability > 1) {
             Unstability = 1;
             FinishGame();
-            CauldronAnim.Play("Idle");
         }
         GameUIManager.FillImage(Unstability);
     }
