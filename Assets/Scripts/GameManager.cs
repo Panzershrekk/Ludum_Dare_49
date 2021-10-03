@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
 
     public Animator CauldronAnim;
     public Animator WitchAnim;
+    public Animator LifeBarAnim;
 
     [HideInInspector]
     public bool GameStarted = false;
@@ -63,6 +64,7 @@ public class GameManager : MonoBehaviour {
             ChangeUnstability(UnstabilityDecreaseWhenSuccess * (1 + _difficultyRatio / 10));
         } else {
             ChangeUnstability(UnstabilityDecreaseWhenSuccess * (1 + _difficultyRatio / 10) * ComboMultiplier);
+            LifeBarAnim.Play("PerfectBounce");
         }
         _combinationPending = false;
         _timeBeforeNextCombination = TimeBetweenCombination / (1 + _difficultyRatio);
