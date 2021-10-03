@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
     public Animator CauldronAnim;
     public Animator WitchAnim;
     public Animator LifeBarAnim;
+    public Animator ExplosionAnim;
 
     [HideInInspector]
     public bool GameStarted = false;
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour {
         } else {
             ChangeUnstability(UnstabilityDecreaseWhenSuccess * (1 + _difficultyRatio / 10) * ComboMultiplier);
             LifeBarAnim.Play("PerfectBounce");
+            Debug.Log("Perfect");
         }
         _combinationPending = false;
         _timeBeforeNextCombination = TimeBetweenCombination / (1 + _difficultyRatio);
@@ -83,6 +85,7 @@ public class GameManager : MonoBehaviour {
             CauldronAnim.Play("Sparkle");
         } else {
             WitchAnim.Play("Witch_Looser");
+            ExplosionAnim.Play("Explosion");
         }
         GameUIManager.DisplayFinish();
     }
