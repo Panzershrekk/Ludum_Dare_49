@@ -5269,14 +5269,15 @@ MonoBehaviour:
   GameUIManager: {fileID: 858410993}
   Combination: {fileID: 2131288408}
   Unstability: 0
-  UnstabilityGrowPerSec: 0.024
-  UnstabilityDecreaseWhenSuccess: -0.12
+  UnstabilityGrowPerSec: 0.018
+  UnstabilityDecreaseWhenSuccess: -0.13
   TimeBetweenCombination: 3
   BaseNumberOnCombination: 3
-  BaseDifficultyRatio: 1
+  BaseDifficultyRatio: 3
+  DifficultyExtraInput: 6
   SecondForDifficultyToIncrease: 8
   SecondToHoldForWin: 90
-  DifficultyIncrease: 0.7
+  DifficultyIncrease: 0.8
   ComboMultiplier: 1.7
   _difficultyRatio: 1
 --- !u!1 &1934228341
@@ -5662,6 +5663,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e1991805fc3ff594c8e93e0ed9673723, type: 2}
   - {fileID: 11400000, guid: 6b5b0fa863d9ceb4e90f50ae7916a71b, type: 2}
   - {fileID: 11400000, guid: d738195e6fa253d41a847182bb034259, type: 2}
+  - {fileID: 11400000, guid: 6005fd8b7ac931142adb7f176abddf66, type: 2}
+  - {fileID: 11400000, guid: 608ec4dc8f8593d4f87bd2b23eb78e6d, type: 2}
   CombinationToDo: []
 --- !u!1 &2146942193
 GameObject:

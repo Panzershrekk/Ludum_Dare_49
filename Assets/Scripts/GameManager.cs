@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour {
     public float TimeBetweenCombination = 3f;
     public int BaseNumberOnCombination = 3;
     public float BaseDifficultyRatio = 1;
+    public int DifficultyExtraInput = 5;
     public float SecondForDifficultyToIncrease = 15f;
     public float SecondToHoldForWin = 120f;
     public float DifficultyIncrease = 0.1f;
@@ -46,7 +47,7 @@ public class GameManager : MonoBehaviour {
             if (_timeBeforeNextCombination > 0) {
                 _timeBeforeNextCombination -= Time.deltaTime;
             } else if (_combinationPending == false) {
-                Combination.GenerateCombination(BaseNumberOnCombination + (int)(_difficultyRatio / 5));
+                Combination.GenerateCombination(BaseNumberOnCombination + (int)(_difficultyRatio / DifficultyExtraInput));
                 _combinationPending = true;
             }
             if (_nextDifficultyIncreaseTime > 0) {
@@ -66,7 +67,6 @@ public class GameManager : MonoBehaviour {
         } else {
             ChangeUnstability(UnstabilityDecreaseWhenSuccess * (1 + _difficultyRatio / 10) * ComboMultiplier);
             LifeBarAnim.Play("PerfectBounce");
-            Debug.Log("Perfect");
         }
         _combinationPending = false;
         _timeBeforeNextCombination = TimeBetweenCombination / (1 + _difficultyRatio);
