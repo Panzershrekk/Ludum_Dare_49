@@ -460,10 +460,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sounds:
-  - Name: 
-    Clip: {fileID: 0}
-    Volume: 0
-    Pitch: 0
+  - Name: Small_Validate
+    Clip: {fileID: 8300000, guid: bd7402af336ad124bab01dc0566f5f93, type: 3}
+    Volume: 0.5
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Big_Validate
+    Clip: {fileID: 8300000, guid: f12ef4589962bda40abf6468a6ab14b6, type: 3}
+    Volume: 0.5
+    Pitch: 1
     Loop: 0
     Source: {fileID: 0}
 --- !u!4 &282769314
@@ -2474,14 +2480,14 @@ MonoBehaviour:
   GameUIManager: {fileID: 858410993}
   Combination: {fileID: 2131288408}
   Unstability: 0
-  UnstabilityGrowPerSec: 0.01
-  UnstabilityDecreaseWhenSuccess: -0.1
+  UnstabilityGrowPerSec: 0.012
+  UnstabilityDecreaseWhenSuccess: -0.12
   TimeBetweenCombination: 3
   BaseNumberOnCombination: 3
-  BaseDifficultyRatio: 0.2
-  SecondForDifficultyToIncrease: 5
-  DifficultyIncrease: 1
-  ComboMultiplier: 1.5
+  BaseDifficultyRatio: 1
+  SecondForDifficultyToIncrease: 8
+  DifficultyIncrease: 0.7
+  ComboMultiplier: 1.7
   _difficultyRatio: 1
 --- !u!1 &2073009214
 GameObject:

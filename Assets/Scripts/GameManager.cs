@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour {
             if (_timeBeforeNextCombination > 0) {
                 _timeBeforeNextCombination -= Time.deltaTime;
             } else if (_combinationPending == false) {
-                Combination.GenerateCombination(BaseNumberOnCombination);
+                Combination.GenerateCombination(BaseNumberOnCombination + (int)(_difficultyRatio / 5));
                 _combinationPending = true;
             }
             if (_nextDifficultyIncreaseTime > 0) {
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void CombinationSuccess(bool combo) {
-        if (combo) {
+        if (combo == false) {
             ChangeUnstability(UnstabilityDecreaseWhenSuccess * (1 + _difficultyRatio / 10));
         } else {
             ChangeUnstability(UnstabilityDecreaseWhenSuccess * (1 + _difficultyRatio / 10) * ComboMultiplier);

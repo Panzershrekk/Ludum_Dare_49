@@ -25,6 +25,7 @@ public class Combination : MonoBehaviour {
                     _validatedIndex += 1;
                     CombinationToDo.RemoveAt(0);
                     if (CombinationToDo.Count <= 0) {
+                        AudioManager.Instance.Play("Big_Validate");
                         _element.PlayValidateAnim();
                         _element.ResetElement();
                         if (_comboPoint == _maxComboPoint) {
@@ -32,6 +33,8 @@ public class Combination : MonoBehaviour {
                         } else {
                             GameManager.CombinationSuccess(false);
                         }
+                    } else {
+                        AudioManager.Instance.Play("Small_Validate");
                     }
                 } else if (Input.anyKeyDown && !Input.GetKeyDown(CombinationToDo[0].key)) {
                     _comboPoint = 0;
