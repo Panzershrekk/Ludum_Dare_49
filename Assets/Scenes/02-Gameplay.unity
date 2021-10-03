@@ -5280,6 +5280,13 @@ MonoBehaviour:
   DifficultyIncrease: 0.6
   ComboMultiplier: 1.7
   _difficultyRatio: 1
+  win: 0
+  CauldronWin: {fileID: 21300000, guid: 124dae9a8c885784ea05e669e8246b14, type: 3}
+  LifeBarWin: {fileID: 21300000, guid: ded9621dc9d3b7d44a0e2984f84cb8ab, type: 3}
+  MixWin: {fileID: 21300000, guid: b681f81f469251944933cab930931b15, type: 3}
+  Cauldron: {fileID: 1468236509}
+  LifeBar: {fileID: 1199610886}
+  MixRenderer: {fileID: 686045175}
 --- !u!1 &1934228341
 GameObject:
   m_ObjectHideFlags: 0
@@ -5529,7 +5536,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043777488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.4, y: 1.76, z: 0}
+  m_LocalPosition: {x: 6.4, y: 1.76, z: -0.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 745773225}
@@ -5663,7 +5670,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e1991805fc3ff594c8e93e0ed9673723, type: 2}
   - {fileID: 11400000, guid: 6b5b0fa863d9ceb4e90f50ae7916a71b, type: 2}
   - {fileID: 11400000, guid: d738195e6fa253d41a847182bb034259, type: 2}
-  - {fileID: 11400000, guid: 6005fd8b7ac931142adb7f176abddf66, type: 2}
+  - {fileID: 11400000, guid: 4cc21c7b50863be439f330c876e099f0, type: 2}
   CombinationToDo: []
 --- !u!1 &2146942193
 GameObject:

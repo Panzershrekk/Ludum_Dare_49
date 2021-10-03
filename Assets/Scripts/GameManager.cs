@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -33,6 +34,17 @@ public class GameManager : MonoBehaviour {
     private float _elaspedTime = 0;
     private float _nextDifficultyIncreaseTime = 0f;
 
+    [Header("Win condition and change")]
+    //It's disgustang plz sorry
+    public bool win;
+    public Sprite CauldronWin;
+    public Sprite LifeBarWin;
+    public Sprite MixWin;
+
+    public Image Cauldron;
+    public Image LifeBar;
+    public SpriteRenderer MixRenderer;
+
     void Start() {
         GameUIManager.UpdateTimerText(0);
         CauldronAnim.Play("Cauldron_bounce");
@@ -56,6 +68,12 @@ public class GameManager : MonoBehaviour {
             if (_nextDifficultyIncreaseTime < 0) {
                 _nextDifficultyIncreaseTime = SecondForDifficultyToIncrease;
                 _difficultyRatioToAdd += DifficultyIncrease;
+            }
+            if (win == false && _elaspedTime > SecondToHoldForWin) {
+                Cauldron.sprite = CauldronWin;
+                LifeBar.sprite = LifeBarWin;
+                MixRenderer.sprite = MixWin;
+                win = true;
             }
             _difficultyRatio = BaseDifficultyRatio + _difficultyRatioToAdd;
         }
