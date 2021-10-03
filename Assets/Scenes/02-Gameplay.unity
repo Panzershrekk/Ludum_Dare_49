@@ -220,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4515863927443520139, guid: 0a6407dd5b93f414a90887998a06a537, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a6407dd5b93f414a90887998a06a537, type: 3}
@@ -603,18 +603,28 @@ MonoBehaviour:
     Volume: 0.5
     Pitch: 1
     Loop: 0
+    PlayOnStart: 0
     Source: {fileID: 0}
   - Name: Big_Validate
     Clip: {fileID: 8300000, guid: f12ef4589962bda40abf6468a6ab14b6, type: 3}
     Volume: 0.5
     Pitch: 1
     Loop: 0
+    PlayOnStart: 0
     Source: {fileID: 0}
   - Name: Countdown
     Clip: {fileID: 8300000, guid: 5fa588688fe202e44881b4dda8c4f7ec, type: 3}
     Volume: 0.5
     Pitch: 1
     Loop: 0
+    PlayOnStart: 0
+    Source: {fileID: 0}
+  - Name: Music
+    Clip: {fileID: 8300000, guid: e123cad0de13ac44fbccf4f444038c9d, type: 3}
+    Volume: 0.2
+    Pitch: 1
+    Loop: 1
+    PlayOnStart: 0
     Source: {fileID: 0}
 --- !u!4 &282769314
 Transform:
@@ -5242,7 +5252,7 @@ MonoBehaviour:
   BaseNumberOnCombination: 3
   BaseDifficultyRatio: 1
   SecondForDifficultyToIncrease: 8
-  SecondToHoldForWin: 120
+  SecondToHoldForWin: 1
   DifficultyIncrease: 0.7
   ComboMultiplier: 1.7
   _difficultyRatio: 1

@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour {
     public void StartGame() {
         _nextDifficultyIncreaseTime = SecondForDifficultyToIncrease;
         GameStarted = true;
+        AudioManager.Instance.Play("Music");
     }
 
     void FinishGame() {

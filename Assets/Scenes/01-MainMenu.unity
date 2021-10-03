@@ -154,7 +154,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 87714472}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -391,11 +391,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 2108173424}
   - {fileID: 581673192}
   - {fileID: 23740747}
-  - {fileID: 1781536375}
+  - {fileID: 2108173424}
   - {fileID: 772881187}
+  - {fileID: 1781536375}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -845,7 +845,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 87714472}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -922,9 +922,17 @@ MonoBehaviour:
   Sounds:
   - Name: Menu_click
     Clip: {fileID: 8300000, guid: ffa1be0d87df38d4ebe1014b67c8af61, type: 3}
-    Volume: 0.5
+    Volume: 0.05
     Pitch: 1
     Loop: 0
+    PlayOnStart: 0
+    Source: {fileID: 0}
+  - Name: Music
+    Clip: {fileID: 8300000, guid: c950025c727796a4bb23575ebf33dfd6, type: 3}
+    Volume: 0.1
+    Pitch: 1
+    Loop: 1
+    PlayOnStart: 1
     Source: {fileID: 0}
 --- !u!4 &639397985
 Transform:
@@ -1033,8 +1041,9 @@ GameObject:
   - component: {fileID: 772881187}
   - component: {fileID: 772881189}
   - component: {fileID: 772881188}
+  - component: {fileID: 772881190}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1052,12 +1061,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 87714472}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 244}
-  m_SizeDelta: {x: 846, y: 493}
+  m_SizeDelta: {x: 876, y: 493}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &772881188
 MonoBehaviour:
@@ -1097,6 +1106,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772881186}
   m_CullTransparentMesh: 1
+--- !u!95 &772881190
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772881186}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a54389a90e90af046983c23a709d1a14, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &856703403 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3214812634699835866, guid: b8f51b7413fb47b489f569baeb8cc8fb, type: 3}
@@ -2148,11 +2176,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 87714472}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -181.1}
+  m_AnchoredPosition: {x: 0, y: -251}
   m_SizeDelta: {x: 358, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108173425
@@ -2411,7 +2439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4515863927443520139, guid: 0a6407dd5b93f414a90887998a06a537, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a6407dd5b93f414a90887998a06a537, type: 3}

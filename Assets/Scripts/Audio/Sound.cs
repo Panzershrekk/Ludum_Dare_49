@@ -16,6 +16,8 @@ public class Sound {
 
     public bool Loop = false;
 
+    public bool PlayOnStart = false;
+
     [HideInInspector]
     public AudioSource Source;
 }
