@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: UpKey
   m_EditorClassIdentifier: 
   key: 273
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 4d5ed241a2713b842884f115c8a2f688, type: 3}

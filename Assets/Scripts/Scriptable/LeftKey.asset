@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LeftKey
   m_EditorClassIdentifier: 
   key: 276
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: bd7935ba310bbe0439bdd118f72fce56, type: 3}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: DownKey
   m_EditorClassIdentifier: 
   key: 274
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 69df1cee74592b549a90495321fb38d8, type: 3}

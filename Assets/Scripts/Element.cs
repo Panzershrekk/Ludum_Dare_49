@@ -23,6 +23,9 @@ public class Element : MonoBehaviour {
 
     public void CreateInput(InputScriptable inputScriptable) {
         GameObject obj = Instantiate(ImageInputPrefab, _layout.transform);
+        if (obj.transform.childCount > 0) {
+            obj.transform.GetChild(0).GetComponent<Image>().sprite = inputScriptable.image;
+        }
     }
 
     public void ValidateInput(int number) {
@@ -49,6 +52,7 @@ public class Element : MonoBehaviour {
 
     public void PlayValidateAnim() {
         if (Animator != null) {
+            Animator.SetTrigger("SelectDone");
             Animator.SetTrigger("Validate");
         }
     }

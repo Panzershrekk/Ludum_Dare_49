@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    public Animator CauldronAnim;
     [HideInInspector]
     public bool GameStarted = false;
     [HideInInspector]
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour {
     public int BaseNumberOnCombination = 3;
     public float BaseDifficultyRatio = 1;
     public float SecondForDifficultyToIncrease = 15f;
+    public float SecondToHoldForWin = 120f;
     public float DifficultyIncrease = 0.1f;
     public float ComboMultiplier = 1.5f;
     public float _difficultyRatio = 1;
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour {
 
     void Start() {
         GameUIManager.UpdateTimerText(0);
+        CauldronAnim.Play("Cauldron_bounce");
     }
 
     // Update is called once per frame
@@ -70,18 +73,31 @@ public class GameManager : MonoBehaviour {
 
     void FinishGame() {
         GameFinished = true;
+        if (_elaspedTime > SecondToHoldForWin) {
+            Debug.Log("YOU WON");
+        }
         GameUIManager.DisplayFinish();
     }
 
     //Value must be between 0.0f and 1.0f
     void ChangeUnstability(float toAdd) {
         Unstability += toAdd;
+        if (Unstability > 0.75f) {
+            CauldronAnim.Play("Cauldron_Unstable_75");
+        } else if (Unstability > 0.50f) {
+            CauldronAnim.Play("Cauldron_Unstable_50");
+        } else if (Unstability > 0.25f) {
+            CauldronAnim.Play("Cauldron_Unstable_25");
+        } else {
+            CauldronAnim.Play("Cauldron_bounce");
+        }
         if (Unstability < 0) {
             Unstability = 0;
         }
         if (Unstability > 1) {
             Unstability = 1;
             FinishGame();
+
         }
         GameUIManager.FillImage(Unstability);
     }
