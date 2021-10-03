@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour {
         GameFinished = true;
         if (_elaspedTime > SecondToHoldForWin) {
             WitchAnim.Play("WitchWin");
+            CauldronAnim.Play("Sparkle");
         } else {
             WitchAnim.Play("Witch_Looser");
         }

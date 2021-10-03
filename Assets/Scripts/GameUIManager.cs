@@ -12,6 +12,11 @@ public class GameUIManager : MonoBehaviour {
     public Image FilledImage;
     public float LerpSpeed;
 
+    void Start() {
+        AudioManager.Instance.Play("Countdown");
+        EndAnimator.Play("Countdown");
+    }
+
     public void FillImage(float fillAmount) {
         FilledImage.fillAmount = Mathf.Lerp(FilledImage.fillAmount, fillAmount, Time.deltaTime * LerpSpeed);
         if (fillAmount == 1) {
@@ -26,6 +31,6 @@ public class GameUIManager : MonoBehaviour {
     }
 
     public void DisplayFinish() {
-        EndAnimator.SetTrigger("End");
+        EndAnimator.Play("ShowEnd");
     }
 }
