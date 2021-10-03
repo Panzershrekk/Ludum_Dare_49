@@ -14,6 +14,9 @@ public class GameUIManager : MonoBehaviour {
 
     public void FillImage(float fillAmount) {
         FilledImage.fillAmount = Mathf.Lerp(FilledImage.fillAmount, fillAmount, Time.deltaTime * LerpSpeed);
+        if (fillAmount == 1) {
+            FilledImage.fillAmount = 1;
+        }
     }
 
     public void UpdateTimerText(float time) {
