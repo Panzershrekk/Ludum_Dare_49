@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     public Animator CauldronAnim;
+    public Animator WitchAnim;
+
     [HideInInspector]
     public bool GameStarted = false;
     [HideInInspector]
@@ -74,7 +76,9 @@ public class GameManager : MonoBehaviour {
     void FinishGame() {
         GameFinished = true;
         if (_elaspedTime > SecondToHoldForWin) {
-            Debug.Log("YOU WON");
+            WitchAnim.Play("WitchWin");
+        } else {
+            WitchAnim.Play("Witch_Looser");
         }
         GameUIManager.DisplayFinish();
     }
