@@ -5658,6 +5658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 1916971509}
+  CooldownOnMistake: 0.3
   Elements:
   - {fileID: 522673181}
   - {fileID: 1226111872}

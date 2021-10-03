@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Combination : MonoBehaviour {
     public GameManager GameManager;
-
+    //TO AVOId SPAM
+    public float CooldownOnMistake = 0.5f;
     public List<Element> Elements = new List<Element>();
     public List<InputScriptable> ListOfKey = new List<InputScriptable>();
 
@@ -15,29 +16,34 @@ public class Combination : MonoBehaviour {
     private int _validatedIndex = 0;
     private int _comboPoint = 0;
     private int _maxComboPoint = 0;
-
+    private float _currentCooldown = 0;
     void Update() {
         if (GameManager.GameStarted == true && GameManager.GameFinished == false) {
             if (CombinationToDo.Count > 0) {
-                if (Input.GetKeyDown(CombinationToDo[0].key)) {
-                    _comboPoint += 1;
-                    _element.ValidateInput(_validatedIndex);
-                    _validatedIndex += 1;
-                    CombinationToDo.RemoveAt(0);
-                    if (CombinationToDo.Count <= 0) {
-                        AudioManager.Instance.Play("Big_Validate");
-                        _element.PlayValidateAnim();
-                        _element.ResetElement();
-                        if (_comboPoint == _maxComboPoint) {
-                            GameManager.CombinationSuccess(true);
+                if (_currentCooldown <= 0) {
+                    if (Input.GetKeyDown(CombinationToDo[0].key)) {
+                        _comboPoint += 1;
+                        _element.ValidateInput(_validatedIndex);
+                        _validatedIndex += 1;
+                        CombinationToDo.RemoveAt(0);
+                        if (CombinationToDo.Count <= 0) {
+                            AudioManager.Instance.Play("Big_Validate");
+                            _element.PlayValidateAnim();
+                            _element.ResetElement();
+                            if (_comboPoint == _maxComboPoint) {
+                                GameManager.CombinationSuccess(true);
+                            } else {
+                                GameManager.CombinationSuccess(false);
+                            }
                         } else {
-                            GameManager.CombinationSuccess(false);
+                            AudioManager.Instance.Play("Small_Validate");
                         }
-                    } else {
-                        AudioManager.Instance.Play("Small_Validate");
+                    } else if (Input.anyKeyDown && !Input.GetKeyDown(CombinationToDo[0].key)) {
+                        _comboPoint = 0;
+                        _currentCooldown = CooldownOnMistake;
                     }
-                } else if (Input.anyKeyDown && !Input.GetKeyDown(CombinationToDo[0].key)) {
-                    _comboPoint = 0;
+                } else {
+                    _currentCooldown -= Time.deltaTime;
                 }
             }
         }
